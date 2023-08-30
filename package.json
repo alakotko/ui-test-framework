@@ -1,0 +1,20 @@
+{
+  "name": "ui-test-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test-run-parrallel": "playwright test",
+    "test-run-nonparrallel": "playwright test --workers=1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.37.1",
+    "allure-playwright": "^2.6.0"
+  },
+  "dependencies": {
+    "config": "^3.3.9"
+  }
+}
