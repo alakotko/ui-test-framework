@@ -27,7 +27,7 @@ test("Payment / Widget / Card '4242 4242 4242 4242' / Should throw a error ", as
   await donationPage.goto();
   await donationPage.giveNowButtonClick();
 
-  await donationWidget.displayed();
+  await donationWidget.fiatDonateScreenActive();
   await donationWidget.choiceMonthlyPayments();
   await donationWidget.addAmountAndCurrency(
     paymentData.amount,
@@ -36,13 +36,18 @@ test("Payment / Widget / Card '4242 4242 4242 4242' / Should throw a error ", as
   );
   await donationWidget.donateButtonClick();
 
+  await donationWidget.paymentMethodScreenActive();
   await donationWidget.deselectCoverTransaction();
   await donationWidget.clickCreditCard();
+
+  await donationWidget.creditCardScreenActive();
   await donationWidget.fillCardData(
     cardData.cardNum,
     cardData.expDate,
     cardData.cvv
   );
+
+  await donationWidget.privacyScreenActive();
   await donationWidget.fillPersonalData(
     personalData.firstName,
     personalData.lastName,
@@ -50,5 +55,6 @@ test("Payment / Widget / Card '4242 4242 4242 4242' / Should throw a error ", as
   );
   await donationWidget.privacyContinueClick();
 
+  await donationWidget.creditCardScreenActive();
   await donationWidget.checkErrorAppears();
 });

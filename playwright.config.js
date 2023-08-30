@@ -16,7 +16,9 @@ module.exports = defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: process.env.ALLURE ? [["line"], ["allure-playwright"]] : "line",
+  reporter: process.env.ALLURE_REPORT
+    ? [["line"], ["allure-playwright"]]
+    : [["line"], ["html"]],
   use: {
     trace: "on-first-retry",
     testIdAttribute: "data-qa",

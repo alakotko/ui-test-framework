@@ -39,3 +39,16 @@ lead to config search for ./config/production.json
 
 In case if theres no such file - it uses default.json.
 
+# 3. Reporting
+By default test reporter is [["line"], ["html"]] wich mean you see proccess in stdout and in the end you get an HTML report
+You can turn on ALLURE reporting by add env 
+```ALLURE_REPORT=true```
+or pass it at run with --reporter argument
+```npx playwright test --reporter=allure-playwright```
+
+Also you can choose dir for allure results by passing env **ALLURE_RESULTS_DIR**
+```ALLURE_RESULTS_DIR=result```
+
+For generate report or open it locally you need to use Allure CLI(https://docs.qameta.io/allure/#_installing_a_commandline)
+```allure generate my-allure-results -o allure-report --clean```
+```allure open allure-report```
