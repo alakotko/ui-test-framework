@@ -1,0 +1,10 @@
+{
+  "env": "demo",
+  "url": {
+    "host": "data.fundraiseup.com",
+    "protocol": "https://",
+    "paths": {
+      "donationWiget": "/qa-test-7R58U3/"
+    }
+  }
+}
